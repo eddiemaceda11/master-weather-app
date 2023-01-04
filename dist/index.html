@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="main">
+      <div class="content">
+        <p class="description">Cloudy</p>
+        <p class="location">Orlando, Florida</p>
+        <div class="weather-div">
+          <div class="temp-div">
+            <p class="temperature">67</p>
+            <span class="span">°F</span>
+          </div>
+          <div class="weather-additional">
+            <p class="feels-like">
+              Feels Like: <span id="feels-like">39</span>°F
+            </p>
+            <p class="wind">Wind: <span id="wind">2</span> MPH</p>
+            <p class="humidity">Humidity: <span id="humidity">69</span>%</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form action="">
+      <label for="search"></label>
+      <input
+        type="text"
+        autocomplete="off"
+        id="search"
+        placeholder="Search city"
+      />
+    </form>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
