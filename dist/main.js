@@ -2,50 +2,90 @@ const search = document.querySelector("#search");
 const tempIcon = document.querySelector(".span");
 tempIcon.classList.add("span");
 
+// https://openweathermap.org/img/wn/01n.png --clear sky
+// https://openweathermap.org/img/wn/02n.png --few clouds
+// https://openweathermap.org/img/wn/03n.png --scattered clouds
+// https://openweathermap.org/img/wn/04n.png --broken clouds
+// https://openweathermap.org/img/wn/09n.png --shower rain
+// https://openweathermap.org/img/wn/10n.png --rain
+// https://openweathermap.org/img/wn/11n.png --thunderstorm
+// https://openweathermap.org/img/wn/50n.png --mist
+
+const getWeatherIcon = (value) => {
+  console.log(value);
+
+  let image;
+
+  if (value === "Clear Sky") {
+    image = "https://openweathermap.org/img/wn/01n.png";
+  }
+  if (value === "Few Clouds") {
+    image = "https://openweathermap.org/img/wn/02n.png";
+  }
+  if (value === "Scattered Clouds") {
+    image = "https://openweathermap.org/img/wn/03n.png";
+  }
+  if (value === "Broken Clouds" || value === "Overcast Clouds") {
+    image = "https://openweathermap.org/img/wn/04n.png";
+  }
+  if (value === "Shower Rain") {
+    image = "https://openweathermap.org/img/wn/09n.png";
+  }
+  if (value === "Rain") {
+    image = "https://openweathermap.org/img/wn/10n.png";
+  }
+  if (value === "Thunderstorm") {
+    image = "https://openweathermap.org/img/wn/11n.png";
+  }
+  if (value === "Mist") {
+    image = "https://openweathermap.org/img/wn/50n.png";
+  }
+
+  console.log(image);
+  return image;
+};
+
 // listen for user search input
 search.addEventListener("keypress", async (e) => {
+  // If user presses Enter, run function
   if (e.key === "Enter") {
     e.preventDefault();
+    // store user input into a variable
     let location = search.value;
     console.log(location);
     try {
-      // get user location info
+      // get user input location info using geolocation
       const getLocation = async (val) => {
         val = [];
         val.push(location);
-        console.log(val);
         const response = await fetch(
           `http://api.openweathermap.org/geo/1.0/direct?q=${val[0]},${val[1]}&limit=1&appid=94c00620a61593a9111c00344c194a3a`
         );
         const data = await response.json();
-        console.log(data);
 
         return {
           lat: data[0].lat,
           lon: data[0].lon,
-          city: data[0].name,
           state: data[0].state,
         };
       };
 
-      // store return value from getLocation
+      // store return value(s) from getLocation
       // function into variable for use
       let coords = await getLocation(location);
-      console.log(coords);
 
       let latitude = coords.lat;
       let longitude = coords.lon;
-      // let city = coords.name;
-      // console.log(city);
       let state = coords.state;
 
-      // get weather info from user location
+      // get weather info using lat and
+      // long values from getLocation()
       const getWeather = async () => {
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=94c00620a61593a9111c00344c194a3a`
         );
         const data = await response.json();
-        console.log(data);
+
         return {
           desc: data.weather[0].description,
           name: data.name,
@@ -72,15 +112,21 @@ search.addEventListener("keypress", async (e) => {
       // display weather on webpage
       const displayWeather = async () => {
         // output weather description to webpage
-        const descText = document.querySelector(".description");
+        const descText = document.querySelector("#desc-text");
         // loop through each desc word to make the first letter of each word uppercase
         let words = desc.split(" ");
         for (let i = 0; i < words.length; i++) {
           words[i] =
             words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
         }
-        words.join(" ");
+
         descText.textContent = words.join(" ");
+
+        // add weather icon next to weather desc
+        let icon = await getWeatherIcon(descText.textContent);
+        const iconDisplay = document.querySelector("#weather-img");
+        iconDisplay.src = "";
+        iconDisplay.src = icon;
 
         // display location to the webpage
         const nameText = document.querySelector(".location");
