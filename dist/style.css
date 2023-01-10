@@ -26,6 +26,27 @@ section {
   align-items: center;
 }
 
+/* .desc-div {
+  display: flex;
+  align-items: center;
+  width: 10rem;
+  justify-content: space-between;
+} */
+
+/* weather icons */
+.fa-cloud {
+  font-size: 30px;
+}
+
+.fa-cloud-rain {
+  font-size: 30px;
+}
+
+.fa-snowflake {
+  padding-left: 8px;
+  font-size: 30px;
+}
+
 div.content {
   /* border: 2px solid blue; */
   height: 60%;
@@ -47,6 +68,10 @@ div.weather-div {
   font-size: 2rem;
   padding-left: 8px;
   font-weight: 200;
+  padding-right: 8rem;
+}
+
+#weather-img {
 }
 
 .location {
