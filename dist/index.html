@@ -7,13 +7,29 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
+
   <body>
     <section class="main">
       <div class="content">
-        <p class="description">Cloudy</p>
+        <p class="description">
+          <span id="desc-text">Broken Clouds</span>
+          <img
+            id="weather-img"
+            src="https://openweathermap.org/img/wn/11n.png"
+            alt=""
+          />
+        </p>
+
         <p class="location">Orlando, Florida</p>
         <div class="weather-div">
           <div class="temp-div">
@@ -40,6 +56,6 @@
         placeholder="Search city"
       />
     </form>
-    <script type="module" src="main.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
