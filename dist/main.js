@@ -1,6 +1,18 @@
 const search = document.querySelector("#search");
 const tempIcon = document.querySelector(".span");
 tempIcon.classList.add("span");
+const checkbox = document.getElementById("checkbox");
+
+checkbox.addEventListener("change", () => {
+  // change theme of website on toggle
+  if (document.body.classList.contains("light")) {
+    document.body.classList.remove("light");
+    document.body.classList.add("dark");
+  } else if (document.body.classList.contains("dark")) {
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+  }
+});
 
 // https://openweathermap.org/img/wn/01n.png --clear sky
 // https://openweathermap.org/img/wn/02n.png --few clouds
