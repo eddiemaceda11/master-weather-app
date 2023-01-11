@@ -8,12 +8,22 @@
 body {
   position: relative;
   height: 100vh;
-  /* width: 100%; */
-  background-image: url(img/nightsky.avif);
+
   background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: brightness(80%);
+
   background-position: center center;
+  transition: background 0.2s linear;
+}
+
+.dark {
+  background-image: url(img/nighttime.avif);
+  backdrop-filter: brightness(80%);
+}
+
+.light {
+  background-image: url(img/daytime.avif);
+  backdrop-filter: brightness(90%);
 }
 
 section {
@@ -123,6 +133,7 @@ form {
   background-color: rgba(167, 167, 167, 0.5);
   font-size: 1.2rem;
   color: #fff;
+  border: none;
 
   width: 16rem;
   height: 2.4rem;
@@ -134,4 +145,59 @@ form {
 
 ::placeholder {
   color: #fff;
+}
+
+/* Toggle button */
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.light-toggle {
+  position: absolute;
+  top: 3.2%;
+  left: 10.5%;
+}
+
+.label {
+  /* background-color: #111;*/
+  /* background-color: rgb(154, 154, 154); */
+  background-color: transparent;
+  box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  height: 26px;
+  width: 50px;
+}
+
+.ball {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50px;
+  height: 21px;
+  width: 21px;
+  background-color: #fff;
+  transition: transform 0.2s linear;
+}
+
+/* see which element goes after the input */
+.checkbox:checked + .label {
+  background-color: transparent;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
 }
