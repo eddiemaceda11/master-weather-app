@@ -7,19 +7,15 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
     </style>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="icon" type="image/jpg" href="img/icons8-climate-16.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Weather App</title>
   </head>
 
   <body class="light">
-    <div class="light-toggle">
+    <!-- toggle btn -->
+    <div class="theme-toggle">
       <input type="checkbox" class="checkbox" id="checkbox" />
       <label for="checkbox" class="label">
         <i class="fas fa-moon"></i>
@@ -28,27 +24,30 @@
       </label>
     </div>
 
+    <!-- <div class="temp-toggle">
+      <input type="checkbox" class="checktemp" id="checktemp" />
+      <label for="checktemp" class="label-temp">
+        <i class="fa-solid fa-c"></i>
+        <i class="fa-solid fa-f"></i>
+        <div class="ball"></div>
+      </label>
+    </div> -->
+
     <section class="main">
       <div class="content">
         <p class="description">
           <span id="desc-text">Broken Clouds</span>
-          <img
-            id="weather-img"
-            src="https://openweathermap.org/img/wn/11n.png"
-            alt=""
-          />
+          <img id="weather-img" src="https://openweathermap.org/img/wn/11n.png" alt="" />
         </p>
 
         <p class="location">Orlando, Florida</p>
         <div class="weather-div">
           <div class="temp-div">
-            <p class="temperature">67</p>
+            <p class="temperature">156</p>
             <span class="span">°F</span>
           </div>
           <div class="weather-additional">
-            <p class="feels-like">
-              Feels Like: <span id="feels-like">39</span>°F
-            </p>
+            <p class="feels-like">Feels Like: <span id="feels-like">39</span>°F</p>
             <p class="wind">Wind: <span id="wind">2</span> MPH</p>
             <p class="humidity">Humidity: <span id="humidity">69</span>%</p>
           </div>
@@ -56,18 +55,9 @@
       </div>
     </section>
 
-    <button class="toggle-btn">
-      <i></i>
-    </button>
-
     <form action="">
       <label for="search"></label>
-      <input
-        type="text"
-        autocomplete="off"
-        id="search"
-        placeholder="Search city"
-      />
+      <input type="text" autocomplete="off" id="search" placeholder="Search city" />
     </form>
     <script src="main.js"></script>
   </body>

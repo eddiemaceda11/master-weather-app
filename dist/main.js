@@ -24,8 +24,6 @@ checkbox.addEventListener("change", () => {
 // https://openweathermap.org/img/wn/50n.png --mist
 
 const getWeatherIcon = (value) => {
-  console.log(value);
-
   let image;
 
   if (value === "Clear Sky") {
@@ -52,8 +50,6 @@ const getWeatherIcon = (value) => {
   if (value === "Mist") {
     image = "https://openweathermap.org/img/wn/50n.png";
   }
-
-  console.log(image);
   return image;
 };
 
@@ -70,9 +66,7 @@ search.addEventListener("keypress", async (e) => {
       const getLocation = async (val) => {
         val = [];
         val.push(location);
-        const response = await fetch(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${val[0]},${val[1]}&limit=1&appid=94c00620a61593a9111c00344c194a3a`
-        );
+        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${val[0]},${val[1]}&limit=1&appid=94c00620a61593a9111c00344c194a3a`);
         const data = await response.json();
 
         return {
@@ -93,9 +87,7 @@ search.addEventListener("keypress", async (e) => {
       // get weather info using lat and
       // long values from getLocation()
       const getWeather = async () => {
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=94c00620a61593a9111c00344c194a3a`
-        );
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=94c00620a61593a9111c00344c194a3a`);
         const data = await response.json();
 
         return {
@@ -115,7 +107,7 @@ search.addEventListener("keypress", async (e) => {
 
       let desc = weather.desc;
       let name = weather.name;
-      let date = new Date(weather.dt * 1000);
+      // let date = new Date(weather.dt * 1000);
       let temp = weather.temp; //convert from K
       let feelsLike = weather.feelsLike; //convert from K
       let speed = weather.speed;
@@ -128,8 +120,7 @@ search.addEventListener("keypress", async (e) => {
         // loop through each desc word to make the first letter of each word uppercase
         let words = desc.split(" ");
         for (let i = 0; i < words.length; i++) {
-          words[i] =
-            words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
+          words[i] = words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
         }
 
         descText.textContent = words.join(" ");
