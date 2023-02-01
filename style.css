@@ -36,13 +36,6 @@ section {
   align-items: center;
 }
 
-/* .desc-div {
-  display: flex;
-  align-items: center;
-  width: 10rem;
-  justify-content: space-between;
-} */
-
 /* weather icons */
 .fa-cloud {
   font-size: 30px;
@@ -58,21 +51,17 @@ section {
 }
 
 div.content {
-  /* border: 2px solid blue; */
   height: 60%;
   width: 1000px;
   opacity: 0.8;
 
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
 }
 
 div.weather-div {
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
-  /* width: 50%; */
 }
 
 .description {
@@ -80,7 +69,6 @@ div.weather-div {
   padding-left: 8px;
   font-weight: 200;
   padding-right: 8rem;
-  border: 1px solid red;
 }
 
 #weather-img {
@@ -97,7 +85,6 @@ div.weather-div {
   display: flex;
   align-items: center;
   gap: 5rem;
-  border: 1px solid purple;
 }
 
 .temp-div {
@@ -123,7 +110,6 @@ div.weather-div {
   font-weight: 600;
   margin-left: -10px;
 
-  border: 1px solid black;
   width: 200px;
 }
 
@@ -271,21 +257,46 @@ form {
   }
 
   .weather-additional {
-    border: 1px solid black;
     width: 200px;
   }
 }
 
 @media (max-width: 515px) {
   .weather-div {
-    width: 375px;
+    width: 425px;
+  }
+}
+
+@media (max-width: 440px) {
+  .weather-div {
+    width: 350px;
+    gap: 3rem;
   }
 
   .temperature {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 
   .weather-additional {
     width: 200px;
+
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 350px) {
+  div.content {
+    width: 100%;
+  }
+
+  .weather-div {
+    max-width: 100%;
+  }
+
+  .weather-additional {
+    border: 1px solid black;
+    width: 130px;
+
+    font-size: 0.8rem;
   }
 }
