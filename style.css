@@ -148,6 +148,7 @@ form {
   border-bottom-right-radius: 6px;
 
   background: transparent;
+  margin-left: -1000px;
 }
 
 .form-btn:hover {
