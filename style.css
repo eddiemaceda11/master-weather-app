@@ -115,26 +115,50 @@ div.weather-div {
 
 form {
   position: absolute;
-  top: 2%;
-  right: 3%;
+  top: 3.5%;
+  right: 1%;
 }
 
 #search {
   background-color: rgba(167, 167, 167, 0.2);
   font-size: 1.2rem;
   color: #fff;
-  border: none;
+  border: 1px solid rgba(128, 128, 128, 0.418);
 
   width: 16rem;
   height: 2.4rem;
   border-radius: 6px;
   outline: none;
   caret-color: #fff;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 }
 
 ::placeholder {
   color: #fff;
+}
+
+.form-btn {
+  width: 36px;
+  height: 39px;
+  border: 1px solid rgba(128, 128, 128, 0.418);
+  position: absolute;
+  right: 0rem;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+
+  background: transparent;
+}
+
+.form-btn:hover {
+  cursor: pointer;
+}
+
+.fa-magnifying-glass {
+  color: #fff;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.55rem;
+  pointer-events: none;
 }
 
 /* Toggle button */
@@ -145,8 +169,8 @@ form {
 
 .theme-toggle {
   position: absolute;
-  top: 2.9%;
-  left: 10.5%;
+  top: 4.1%;
+  left: 4.5%;
 }
 
 .label {
