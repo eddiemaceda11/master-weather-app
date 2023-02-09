@@ -15,7 +15,7 @@ formBtn.addEventListener("click", async (e) => {
     const getLocation = async (val) => {
       val = [];
       val.push(location);
-      const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${val[0]},${val[1]}&limit=1&appid=94c00620a61593a9111c00344c194a3a`);
+      const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${val[0]},${val[1]}&limit=1&appid=94c00620a61593a9111c00344c194a3a`);
       const data = await response.json();
 
       return {
@@ -172,7 +172,7 @@ search.addEventListener("keypress", async (e) => {
       const getLocation = async (val) => {
         val = [];
         val.push(location);
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${val[0]},${val[1]}&limit=1&appid=94c00620a61593a9111c00344c194a3a`);
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${val[0]},${val[1]}&limit=1&appid=94c00620a61593a9111c00344c194a3a`);
         const data = await response.json();
 
         return {
